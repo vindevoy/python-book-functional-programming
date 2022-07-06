@@ -1,8 +1,8 @@
 format: jb-book
 
-root: intro
+root: content/0010_introduction/intro
 
 chapters:
-- file: test-markdown
-- file: test-notebook
+- file: content/0020_getting_started/test-markdown
+- file: content/0020_getting_started/test-notebook
 

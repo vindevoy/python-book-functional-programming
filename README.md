@@ -1,1 +1,2 @@
-# python-book-functional-programming
+# Functional programming in Python
+

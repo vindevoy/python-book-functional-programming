@@ -4,6 +4,7 @@
 __pycache__/
 
 _build/
+_logs/
 
 *.log
 *.secret

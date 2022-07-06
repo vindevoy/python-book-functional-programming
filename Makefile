@@ -5,15 +5,22 @@ clean:
 	rm -rf ./_build
 
 init:
+	mkdir -p ./_logs
 	mkdir -p ./tests
 	touch ./tests/delete.me
 
 	jupyter-book create book
 
-html:
+order:
+	python order.py
+
+toc: order
+	python toc.py
+
+html: toc
 	jupyter-book build --path-output=. ./book/
 
-pdf:
+pdf: toc
 	jupyter-book build --path-output=. ./book/ --builder=pdflatex
 
 build: clean html pdf

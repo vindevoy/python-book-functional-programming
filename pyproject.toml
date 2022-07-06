@@ -7,6 +7,9 @@ authors = ["Yves Vindevogel <yves@vindevogel.net>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 jupyter-book = "^0.13.0"
+jupyter = "^1.0.0"
+matplotlib = "^3.5.2"
+numpy = "^1.23.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.2"

@@ -15,3 +15,6 @@ bibtex_bibfiles:
 html:
   use_issues_button: false
   use_repository_button: false
+
+launch_buttons:
+  binderhub_url: "https://notebooks.gesis.org/binder/jupyter/user/syntra-vindevoy-nal-programming-fr7nhxnd/doc/workspaces/auto-Z/tree/book"

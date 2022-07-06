@@ -16,3 +16,6 @@ pdf:
 	jupyter-book build book/ --builder=pdflatex
 
 build: clean html pdf
+
+browse: clean html
+	google-chrome ./book/_build/html/index.html

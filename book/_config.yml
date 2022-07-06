@@ -22,4 +22,4 @@ html:
   use_repository_button: true
 
 launch_buttons:
-  binderhub_url: "https://mybinder.org/v2/gh/vindevoy/python-book-functional-programming.git/develop?labpath=book/content"
+  binderhub_url: "https://mybinder.org/v2/gh/vindevoy/python-book-functional-programming.git/develop?labpath=book%2Fcontent"

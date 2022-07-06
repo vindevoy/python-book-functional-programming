@@ -1,5 +1,9 @@
 # Functional programming in Python
 
+## About
+
+This repository contains the sources of the book I'm writing for **Syntra**'s course **Python Developer**.  I am a teacher for Syntra and I have been teaching this course since 2021.
+
 ## Install
 
 When I was working on my paper for the zythology course I was following, I used sphinx-doc already.  

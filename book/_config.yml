@@ -12,9 +12,14 @@ latex:
 bibtex_bibfiles:
   - references.bib
 
+repository:
+  url: https://github.com/vindevoy/python-book-functional-programming
+  path_to_book: book
+  branch: develop
+
 html:
-  use_issues_button: false
-  use_repository_button: false
+  use_issues_button: true
+  use_repository_button: true
 
 launch_buttons:
-  binderhub_url: "https://notebooks.gesis.org/binder/jupyter/user/syntra-vindevoy-nal-programming-fr7nhxnd/doc/workspaces/auto-Z/tree/book"
+  binderhub_url: "https://mybinder.org/v2/gh/vindevoy/python-book-functional-programming.git/develop?labpath=book"

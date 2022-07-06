@@ -1,7 +1,8 @@
 SHELL 			:= /bin/bash
 
 clean:
-	rm -rf ./book/_build
+	jupyter-book clean book/ --all
+	rm -rf ./_build
 
 init:
 	mkdir -p ./tests
@@ -10,12 +11,12 @@ init:
 	jupyter-book create book
 
 html:
-	jupyter-book build book/
+	jupyter-book build --path-output=. ./book/
 
 pdf:
-	jupyter-book build book/ --builder=pdflatex
+	jupyter-book build --path-output=. ./book/ --builder=pdflatex
 
 build: clean html pdf
 
 browse: clean html
-	google-chrome ./book/_build/html/index.html
+	google-chrome ./_build/html/index.html

@@ -27,7 +27,6 @@ def __create_toc(root_dir: str, current_toc: list) -> str:
             file = entry["name"].split(".")[0]
 
             current_toc.append(f"- file: {root_dir}/{file}")
-
         else:
             directory = entry["name"]
 

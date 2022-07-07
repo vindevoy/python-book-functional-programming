@@ -30,7 +30,7 @@ NUMBER_DIGITS = 4
 def __order_dir(root_dir: str) -> None:
     root_path = Path(root_dir)
 
-    entries = [{"name": e.name, "file": e.is_file()} for e in root_path.iterdir()]
+    entries = [{"name": e.name, "dir": e.is_dir()} for e in root_path.iterdir()]
     entries.sort(key=lambda e: e["name"])
 
     logger.debug(f"path: {root_path}")
@@ -39,36 +39,18 @@ def __order_dir(root_dir: str) -> None:
     entry_number = 0
 
     for entry in entries:
-        if entry["file"]:
-            file = entry["name"]
+        entry_number += 10
+        entry_name = entry["name"]
+        idx = entry_name.find("_")
 
-            entry_number += 10
+        if entry["dir"]:
+            __order_dir(os.path.join(root_dir, entry_name))
+            # Recursive call before we rename directories
 
-            if "_" in file:
-                idx = file.index("_")
-            else:
-                idx = -1
+        new_name = f"{str(entry_number).zfill(NUMBER_DIGITS)}_{entry_name[idx + 1:]}"
+        new_name = new_name.replace("-", "_")
 
-            file_name = f"{str(entry_number).zfill(NUMBER_DIGITS)}_{file[idx + 1:]}"
-            file_name = file_name.replace("-", "_")
-
-            __rename(root_dir=root_dir, original_entry=file, new_entry=file_name)
-
-        else:
-            directory = entry["name"]
-
-            if "_" in directory:
-                __order_dir(os.path.join(root_dir, directory))
-                # Recursive call before we rename directories, and only for dirs with _
-
-                idx = directory.index("_")
-            else:
-                idx = -1
-
-            entry_number += 10
-            dir_name = f"{str(entry_number).zfill(NUMBER_DIGITS)}_{directory[idx + 1:]}"
-
-            __rename(root_dir=root_dir, original_entry=directory, new_entry=dir_name)
+        __rename(root_dir=root_dir, original_entry=entry_name, new_entry=new_name)
 
 
 def __rename(root_dir, original_entry, new_entry):

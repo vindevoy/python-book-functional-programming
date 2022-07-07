@@ -25,5 +25,5 @@ pdf: toc
 
 build: clean html pdf
 
-browse: clean html
+browse:
 	google-chrome ./_build/html/index.html
